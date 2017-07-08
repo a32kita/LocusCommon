@@ -162,7 +162,7 @@ namespace LocusCommon.IO
         private _ReadResult _read(int byteLen)
         {
             byte[] buffer = new byte[byteLen];
-            var e = new InterceptableStreamReadingEventArgs(this.canRead, buffer, null);
+            var e = new InterceptableStreamReadingEventArgs(this.canRead, buffer, byteLen, null);
             this.Reading(this, e);
 
             if (!this.canRead)
@@ -373,6 +373,7 @@ namespace LocusCommon.IO
         private bool canRead;
         private byte[] data;
         private int count;
+        private int maxCount;
         private Exception exception;
 
 
@@ -403,6 +404,14 @@ namespace LocusCommon.IO
         }
 
         /// <summary>
+        /// Readメソッドで指定された最大読み込みバイト数 (Count) の値を取得します。
+        /// </summary>
+        public int MaxCount
+        {
+            get { return this.maxCount; }
+        }
+
+        /// <summary>
         /// このイベントの処理が終了した後に発生する例外を指定します。発生させない場合は、nullを指定します。
         /// nullの場合でも、ストリームのCanReadがfalseであった場合は、NotSupportedExceptionがスローされます。
         /// </summary>
@@ -420,11 +429,13 @@ namespace LocusCommon.IO
         /// </summary>
         /// <param name="CanRead"></param>
         /// <param name="Data">Readで取得されるバッファです。ストリームのReadメソッドのCount（読み込みバイト数）を超えない長さのbyte[]を指定します。</param>
+        /// <param name="MaxCount">Readメソッドで指定された最大読み込みバイト数 (Count) の値を指定します。</param>
         /// <param name="Exception"></param>
-        public InterceptableStreamReadingEventArgs(bool CanRead, byte[] Data, Exception Exception)
+        public InterceptableStreamReadingEventArgs(bool CanRead, byte[] Data, int MaxCount, Exception Exception)
         {
             this.canRead = CanRead;
             this.data = Data;
+            this.maxCount = MaxCount;
             this.exception = Exception;
         }
 
