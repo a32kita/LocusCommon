@@ -35,7 +35,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Debug\" />
-    <Folder Include="IO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\LocusCommon\IO\DistributableStream.cs">
+      <Link>IO\DistributableStream.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\IO\InterceptableStream.cs">
+      <Link>IO\InterceptableStream.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\IO\SubStream.cs">
+      <Link>IO\SubStream.cs</Link>
+    </Compile>
+    <Compile Include="LocusAttribute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

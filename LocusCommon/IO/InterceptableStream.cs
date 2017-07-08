@@ -21,32 +21,50 @@ namespace LocusCommon.IO
 
 
         // 公開プロパティ
-        
+
+        /// <summary>
+        /// 現在のストリームがシークをサポートするかどうかを示す値を取得します。
+        /// </summary>
         public override bool CanSeek
         {
             get { return this.canSeek; }
         }
 
+        /// <summary>
+        /// 現在のストリームが読み取りをサポートするかどうかを示す値を取得します。
+        /// </summary>
         public override bool CanRead
         {
             get { return this.canRead; }
         }
 
+        /// <summary>
+        /// 現在のストリームが書き込みをサポートするかどうかを示す値を取得します。
+        /// </summary>
         public override bool CanWrite
         {
             get { return this.canWrite; }
         }
 
+        /// <summary>
+        /// 現在のストリームがタイムアウトできるかどうかを決定する値を取得します。
+        /// </summary>
         public override bool CanTimeout
         {
             get { return this.canTimeout; }
         }
 
+        /// <summary>
+        /// ストリームの長さをバイト単位で取得します。
+        /// </summary>
         public override long Length
         {
             get { return this._getLength(); }
         }
 
+        /// <summary>
+        /// 現在のストリーム内の位置を取得または設定します。
+        /// </summary>
         public override long Position
         {
             get { return this._getPosition(); }
@@ -80,7 +98,12 @@ namespace LocusCommon.IO
         /// SetLength操作が行われる際に発生します。
         /// </summary>
         public event InterceptableStreamLengthEventHandler ChangeLength;
-        
+
+        /// <summary>
+        /// Seek操作が行われようとしているときに発生します。
+        /// </summary>
+        public event InterceptableStreamSeekEventHandler Seeking;
+
 
         // コンストラクタ
 
@@ -163,11 +186,25 @@ namespace LocusCommon.IO
                 throw e.Exception;
         }
 
+        private long _seek(long offset, SeekOrigin seekOrigin)
+        {
+            var e = new InterceptableStreamSeekEventArgs(offset, seekOrigin, null);
+            this.Seeking(this, e);
+
+            if (!this.canSeek)
+                throw new NotSupportedException();
+
+            if (e.Exception != null)
+                throw e.Exception;
+
+            return e.Offset;
+        }
+
 
         // 公開メソッド
-        
+
         /// <summary>
-        /// 
+        /// 現在のストリームからバイト シーケンスを読み取り、読み取ったバイト数の分だけストリームの位置を進めます。
         /// </summary>
         /// <param name="Buffer"></param>
         /// <param name="Offset"></param>
@@ -184,9 +221,9 @@ namespace LocusCommon.IO
         }
 
         /// <summary>
-        /// 
+        /// ストリームから 1 バイトを読み取り、ストリーム内の位置を 1 バイト進めます。ストリームの末尾の場合は -1 を返します。
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Int32 にキャストされた符号なしバイト。ストリームの末尾の場合は -1。</returns>
         public override int ReadByte()
         {
             var r = this._read(1);
@@ -197,11 +234,11 @@ namespace LocusCommon.IO
         }
 
         /// <summary>
-        /// 
+        /// 現在のストリームからバイト シーケンスを読み取り、読み取ったバイト数の分だけストリームの位置を進めます。
         /// </summary>
-        /// <param name="Buffer"></param>
-        /// <param name="Offset"></param>
-        /// <param name="Count"></param>
+        /// <param name="Buffer">バイト配列。 このメソッドが戻るとき、指定したバイト配列の Offset から (Offset + Count -1) までの値が、現在のソースから読み取られたバイトに置き換えられます。</param>
+        /// <param name="Offset">現在のストリームから読み取ったデータの格納を開始する位置を示す buffer 内のバイト オフセット。インデックス番号は 0 から始まります。</param>
+        /// <param name="Count">現在のストリームから読み取る最大バイト数。</param>
         public override void Write(byte[] Buffer, int Offset, int Count)
         {
             byte[] target = new byte[Count];
@@ -211,7 +248,7 @@ namespace LocusCommon.IO
         }
 
         /// <summary>
-        /// 
+        /// ストリームの現在位置にバイトを書き込み、ストリームの位置を 1 バイトだけ進めます。
         /// </summary>
         /// <param name="Value"></param>
         public override void WriteByte(byte Value)
@@ -228,12 +265,23 @@ namespace LocusCommon.IO
         }
 
         /// <summary>
-        /// 
+        /// 現在のストリームの長さを設定します。
         /// </summary>
-        /// <param name="Value"></param>
+        /// <param name="Value">現在のストリームの希望の長さ (バイト数)。</param>
         public override void SetLength(long Value)
         {
             this._setLength(Value);
+        }
+
+        /// <summary>
+        /// 現在のストリーム内の位置を設定します。
+        /// </summary>
+        /// <param name="Offset">Origin パラメーターからの相対バイト オフセット。</param>
+        /// <param name="Origin">新しい位置を取得するために使用する参照ポイントを示す SeekOrigin 型の値。</param>
+        /// <returns></returns>
+        public override long Seek(long Offset, SeekOrigin Origin)
+        {
+            return this._seek(Offset, Origin);
         }
 
 
@@ -246,8 +294,16 @@ namespace LocusCommon.IO
         }
     }
 
+    /// <summary>
+    /// InterceptableStream クラスのイベントを処理するメソッドを表します。 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     public delegate void InterceptableStreamWritingEventHandler(Object sender, InterceptableStreamWritingEventArgs e);
 
+    /// <summary>
+    /// InterceptableStream クラスのイベントのデータを提供します。 
+    /// </summary>
     public class InterceptableStreamWritingEventArgs
     {
         // 非公開フィールド
@@ -301,8 +357,16 @@ namespace LocusCommon.IO
         }
     }
 
+    /// <summary>
+    /// InterceptableStream クラスのイベントを処理するメソッドを表します。 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     public delegate void InterceptableStreamReadingEventHandler(Object sender, InterceptableStreamReadingEventArgs e);
 
+    /// <summary>
+    /// InterceptableStream クラスのイベントのデータを提供します。 
+    /// </summary>
     public class InterceptableStreamReadingEventArgs
     {
         // 非公開フィールド
@@ -395,8 +459,16 @@ namespace LocusCommon.IO
         }
     }
 
+    /// <summary>
+    /// InterceptableStream クラスのイベントを処理するメソッドを表します。 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     public delegate void InterceptableStreamLengthEventHandler(Object sender, InterceptableStreamLengthEventArgs e);
 
+    /// <summary>
+    /// InterceptableStream クラスのイベントのデータを提供します。 
+    /// </summary>
     public class InterceptableStreamLengthEventArgs
     {
         // 非公開フィールド
@@ -447,6 +519,70 @@ namespace LocusCommon.IO
         public void EnableNotSupportedException()
         {
             this.exception = new NotSupportedException();
+        }
+    }
+
+    /// <summary>
+    /// InterceptableStream クラスのイベントを処理するメソッドを表します。 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    public delegate void InterceptableStreamSeekEventHandler(Object sender, InterceptableStreamSeekEventArgs e);
+
+    /// <summary>
+    /// InterceptableStream クラスのイベントのデータを提供します。 
+    /// </summary>
+    public class InterceptableStreamSeekEventArgs
+    {
+        // 非公開フィールド
+        private long offset;
+        private SeekOrigin seekOrigin;
+        private Exception exception;
+
+
+        // 公開プロパティ
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public long Offset
+        {
+            get { return this.offset; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SeekOrigin SeekOrigin
+        {
+            get { return this.seekOrigin; }
+            set { this.seekOrigin = value; }
+        }
+
+        /// <summary>
+        /// このイベントの処理が終了した後に発生する例外を指定します。発生させない場合は、nullを指定します。
+        /// nullの場合でも、ストリームのCanSeekがfalseであった場合は、NotSupportedExceptionがスローされます。
+        /// </summary>
+        public Exception Exception
+        {
+            get { return this.exception; }
+            set { this.exception = value; }
+        }
+
+
+        // コンストラクタ
+
+        /// <summary>
+        /// 新しいInterceptableStreamSeekEventArgsクラスのインスタンスを初期化します。
+        /// </summary>
+        /// <param name="Offset"></param>
+        /// <param name="SeekOrigin"></param>
+        /// <param name="exception"></param>
+        public InterceptableStreamSeekEventArgs(long Offset, SeekOrigin SeekOrigin, Exception exception)
+        {
+            this.offset = Offset;
+            this.seekOrigin = SeekOrigin;
+            this.exception = Exception;
         }
     }
 }
