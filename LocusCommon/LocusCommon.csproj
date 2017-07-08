@@ -36,7 +36,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Collection\" />
+    <Folder Include="Collection\Generic\" />
     <Folder Include="Debug\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>

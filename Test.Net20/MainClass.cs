@@ -116,7 +116,6 @@ namespace LocusCommon.Test.Net20
             arrangerStream.Writing += (sender, e) =>
             {
                 string input = encoding.GetString(e.Data);
-                //input = input.Substring(0, input.Length - 1);
                 Console.WriteLine(arranger2.Arrange(input));
             };
 
