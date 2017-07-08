@@ -43,8 +43,14 @@
     <Compile Include="..\LocusCommon\IO\InterceptableStream.cs">
       <Link>IO\InterceptableStream.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon\IO\QuickStreamWriter.cs">
+      <Link>IO\QuickStreamWriter.cs</Link>
+    </Compile>
     <Compile Include="..\LocusCommon\IO\SubStream.cs">
       <Link>IO\SubStream.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\Text\TextArranger.cs">
+      <Link>Text\TextArranger.cs</Link>
     </Compile>
     <Compile Include="LocusAttribute.cs" />
   </ItemGroup>

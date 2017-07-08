@@ -5,6 +5,8 @@ using System.Text;
 
 using LocusCommon;
 using LocusCommon.IO;
+using LocusCommon.Text;
+
 
 namespace LocusCommon.Test.Net20
 {
@@ -17,6 +19,8 @@ namespace LocusCommon.Test.Net20
 
 
             #region InterceptableStream :: Writing 
+            Console.WriteLine("InterceptableStream :: Writing ");
+
             InterceptableStream stream1 = new InterceptableStream();
             stream1.Writing += (sender, e) =>
             {
@@ -35,6 +39,8 @@ namespace LocusCommon.Test.Net20
             #endregion
 
             #region InterceptableStream :: Reading
+            Console.WriteLine("InterceptableStream :: Reading ");
+
             InterceptableStream stream2 = new InterceptableStream();
             stream2.Reading += (sender, e) =>
             {
@@ -62,6 +68,8 @@ namespace LocusCommon.Test.Net20
             #endregion
 
             #region DistributableStream :: Writing
+            Console.WriteLine("DistributableStream :: Writing ");
+
             InterceptableStream intStream1 = new InterceptableStream();
             InterceptableStream intStream2 = new InterceptableStream();
             InterceptableStream intStream3 = new InterceptableStream();
@@ -81,10 +89,44 @@ namespace LocusCommon.Test.Net20
             distSW.AutoFlush = true;
             distSW.Write("This is a test data.");
 
-            Console.WriteLine("InterceptableStream test is completed.");
+            Console.WriteLine("DistributableStream test is completed.");
             Console.WriteLine();
             #endregion
 
+            #region TextArranger (normal)
+            Console.WriteLine("TextArranger (normal)");
+
+            TextArranger arranger = new TextArranger(75, "Header | ", " | Footer", "\n");
+            Console.WriteLine(arranger.Arrange("この内Clearメソッドは、Lengthプロパティを0にして自分自身を返しているだけですので、実質的にLengthプロパティを0にする方法と同じです。（ただ、メソッドになっているため分かりやすい、自分自身のStringBuilderオブジェクトを返すため続けて別のメソッドを呼び出せるなどの利点があります。）\n新しいインスタンスを作成する方法とLengthを0にする方法を比較すると、前者は新しいインスタンスを作成し、古いインスタンスを破棄するため、後者のインスタンスを再利用する方法と比べて無駄が多いと考えられます。実際「Clear C# StringBuilder : C# 411」によると、Lengthを0にした方法のほうが速いそうです。"));
+            
+            Console.WriteLine("TextArranger (normal) test is completed.");
+            Console.WriteLine();
+            #endregion
+
+            #region TextArranger (use event, InterceptableStream)
+            Console.WriteLine("TextArranger (use event, InterceptableStream, QuickStreamWriter)");
+
+            TextArranger arranger2 = new TextArranger(75, "Header | ", " | Footer", "\n");
+            arranger2.Arranging += (sender, e) =>
+            {
+                e.Header += DateTime.Now.ToString("HH:mm:ss.fff") + " | ";
+            };
+
+            InterceptableStream arrangerStream = new InterceptableStream();
+            arrangerStream.Writing += (sender, e) =>
+            {
+                string input = encoding.GetString(e.Data);
+                //input = input.Substring(0, input.Length - 1);
+                Console.WriteLine(arranger2.Arrange(input));
+            };
+
+            StreamWriter asWriter = new QuickStreamWriter(arrangerStream, encoding, true);
+            asWriter.WriteLine("さらに、書式を指定してDateTimeオブジェクトを文字列に変換することもできます。書式を指定するには、ToStringメソッドのパラメータに書式を文字列で渡します。");
+            asWriter.WriteLine("日時を文字列に変換する時に使用できる書式の文字列は、「日時書式指定文字列」と呼びます。また、日時書式指定文字列は、「標準の日時書式指定文字列」と「カスタム日時書式指定文字列」に分けることができます。");
+
+            Console.WriteLine("TextArranger (normal) test is completed.");
+            Console.WriteLine();
+            #endregion
 
             Console.ReadKey();
         }
