@@ -84,9 +84,70 @@ namespace LocusCommon.Collection.Specialized
         /// <summary>
         /// 複数項目の変更を記述 する NotifyCollectionChangedEventArgs クラスの新しいインスタンスを初期化します。
         /// </summary>
-        /// <param name="action"></param>
+        /// <param name="action">イベントの原因となったアクション。 これは Reset、Add、または Remove に設定できます。</param>
         /// <param name="changedItems"></param>
         public NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction action, IList changedItems)
+            : this(action, null, -1, null, -1)
+        {
+            if (action == NotifyCollectionChangedAction.Add)
+                this.newItems = changedItems;
+            else if (action == NotifyCollectionChangedAction.Remove || action == NotifyCollectionChangedAction.Reset)
+                this.oldItems = changedItems;
+        }
+
+        /// <summary>
+        /// 複数項目の Replace の変更について記述する NotifyCollectionChangedEventArgs クラスの新しいインスタンスを初期化します。
+        /// </summary>
+        /// <param name="action">イベントの原因となったアクション。 Replace にのみ設定できます。</param>
+        /// <param name="newItems">元の項目を置き換える新しい項目。</param>
+        /// <param name="oldItems">置き換えられた元の項目。</param>
+        public NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction action, IList newItems, IList oldItems)
+            : this(action, newItems, -1, oldItems, -1)
+        {
+        }
+
+        /// <summary>
+        /// 複数項目の Replace の変更について記述する NotifyCollectionChangedEventArgs クラスの新しいインスタンスを初期化します。
+        /// </summary>
+        /// <param name="action">イベントの原因となったアクション。 Replace にのみ設定できます。</param>
+        /// <param name="newItems">元の項目を置き換える新しい項目。</param>
+        /// <param name="oldItems">置き換えられる元の項目。</param>
+        /// <param name="startingIndex">置き換えられる項目の最初の項目のインデックス。</param>
+        public NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction action, IList newItems, IList oldItems, int startingIndex)
+            : this(action, newItems, startingIndex, oldItems, startingIndex)
+        {
+        }
+
+        /// <summary>
+        /// 複数項目の変更または Reset による変更を記述する NotifyCollectionChangedEventArgs クラスの新しいインスタンスを初期化します。
+        /// </summary>
+        /// <param name="action">イベントの原因となったアクション。 これは Reset、Add、または Remove に設定できます。</param>
+        /// <param name="changedItems">変更の影響を受ける項目。</param>
+        /// <param name="startingIndex">変更が発生したインデックス。</param>
+        public NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction action, IList changedItems, int startingIndex)
+            : this(action, changedItems, startingIndex, changedItems, startingIndex)
+        {
+            if (action == NotifyCollectionChangedAction.Add)
+            {
+                this.oldItems = null;
+                this.oldStartingIndex = 0;
+            }
+            else if (action == NotifyCollectionChangedAction.Remove || action == NotifyCollectionChangedAction.Reset)
+            {
+                this.newItems = null;
+                this.newStartingIndex = 0;
+            }
+        }
+
+        /// <summary>
+        /// NotifyCollectionChangedEventArgs クラスの新しいインスタンスを初期化し、複数項目 Move の変化を記述します。
+        /// </summary>
+        /// <param name="action">イベントの原因となったアクション。 これは Move にのみ設定できます。</param>
+        /// <param name="changedItems">変化の影響を受ける項目。</param>
+        /// <param name="index">変化した項目の新しいインデックス。</param>
+        /// <param name="oldIndex">変化した項目の古いインデックス。</param>
+        public NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction action, IList changedItems, int index, int oldIndex)
+            : this(action, changedItems, index, changedItems, oldIndex)
         {
         }
     }

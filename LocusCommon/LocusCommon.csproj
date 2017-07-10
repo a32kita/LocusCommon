@@ -36,7 +36,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Collection\Generic\" />
     <Folder Include="Collection\ObjectModel\" />
     <Folder Include="Debug\" />
     <Folder Include="Exceptions\" />
@@ -46,6 +45,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collection\Generic\OverridableList.cs" />
     <Compile Include="Collection\Specialized\INotifyCollectionChanged.cs" />
     <Compile Include="Collection\Specialized\NotifyCollectionChangedAction.cs" />
     <Compile Include="Collection\Specialized\NotifyCollectionChangedEventArgs.cs" />
