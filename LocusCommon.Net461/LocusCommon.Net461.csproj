@@ -4,12 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FF276C22-29A0-4CBE-93AD-996998D98916}</ProjectGuid>
+    <ProjectGuid>{01CD7061-A424-41F0-A85F-CEB808CAFBA9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>LocusCommon</RootNamespace>
     <AssemblyName>LocusCommon</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -20,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\LocusCommon.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,33 +30,41 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\LocusCommon.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Collection\Generic\" />
-    <Folder Include="Collection\ObjectModel\" />
-    <Folder Include="Debug\" />
-    <Folder Include="Exceptions\" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collection\Specialized\INotifyCollectionChanged.cs" />
-    <Compile Include="Collection\Specialized\NotifyCollectionChangedAction.cs" />
-    <Compile Include="Collection\Specialized\NotifyCollectionChangedEventArgs.cs" />
-    <Compile Include="Collection\Specialized\NotifyCollectionChangedEventHandler.cs" />
-    <Compile Include="IO\DistributableStream.cs" />
-    <Compile Include="IO\InterceptableStream.cs" />
-    <Compile Include="IO\QuickStreamWriter.cs" />
-    <Compile Include="IO\SubStream.cs" />
-    <Compile Include="LocusAttribute.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Text\TextArranger.cs" />
+    <Compile Include="..\LocusCommon\IO\DistributableStream.cs">
+      <Link>IO\DistributableStream.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\IO\InterceptableStream.cs">
+      <Link>IO\InterceptableStream.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\IO\QuickStreamWriter.cs">
+      <Link>IO\QuickStreamWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\IO\SubStream.cs">
+      <Link>IO\SubStream.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\LocusAttribute.cs">
+      <Link>LocusAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\Text\TextArranger.cs">
+      <Link>Text\TextArranger.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
