@@ -45,7 +45,6 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Collection\Generic\NativeOverridableList.cs" />
     <Compile Include="Collection\Generic\NotifyList.cs" />
     <Compile Include="Collection\Generic\OverridableList.cs" />
     <Compile Include="Collection\Specialized\INotifyCollectionChanged.cs" />
