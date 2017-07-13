@@ -5,6 +5,7 @@ using System.Text;
 
 using LocusCommon;
 using LocusCommon.IO;
+using LocusCommon.Collection.Generic;
 using LocusCommon.Text;
 
 
@@ -134,6 +135,19 @@ namespace LocusCommon.Test.Net20
             Console.WriteLine();
             #endregion
 
+            #region OverridableList
+            Console.WriteLine("OverridableList");
+
+            OverridableList<string> list = new OverridableList<string>();
+            list.Add("keisei");
+            list.Add("keikyu");
+            list.Add("tokyu");
+            foreach (var item in list)
+                Console.WriteLine("item:" + item);
+
+            Console.WriteLine("OverridableList test is completed.");
+            Console.WriteLine();
+            #endregion
 
             Console.ReadKey();
         }

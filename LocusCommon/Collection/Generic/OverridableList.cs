@@ -637,7 +637,23 @@ namespace LocusCommon.Collection.Generic
         #endregion
 
 
-        // 公開内部クラス
+        // 公開静的メソッド
+        #region 公開静的メソッド
 
-    }
+        /// <summary>
+        /// 内部のListを取得します。
+        /// </summary>
+        /// <param name="source"></param>
+        public static implicit operator List<T> (OverridableList<T> source)
+        {
+            return source.internalList;
+        }
+
+
+        #endregion
+
+
+            // 公開内部クラス
+
+        }
 }
