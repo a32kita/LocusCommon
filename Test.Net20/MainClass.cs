@@ -7,6 +7,7 @@ using LocusCommon;
 using LocusCommon.IO;
 using LocusCommon.Collection.Generic;
 using LocusCommon.Text;
+using LocusCommon.Magics;
 
 
 namespace LocusCommon.Test.Net20
@@ -147,6 +148,13 @@ namespace LocusCommon.Test.Net20
 
             Console.WriteLine("OverridableList test is completed.");
             Console.WriteLine();
+            #endregion
+
+            #region EvalProcessor
+
+            EvalProcessor ep = new EvalProcessor("Console.WriteLine(parameter);");
+            ep.Execute("ほげ");
+
             #endregion
 
             Console.ReadKey();

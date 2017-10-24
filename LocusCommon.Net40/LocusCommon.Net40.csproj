@@ -52,6 +52,9 @@
     <Compile Include="..\LocusCommon\IO\SubStream.cs">
       <Link>IO\SubStream.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon\Magics\EvalProcessor.cs">
+      <Link>Magics\EvalProcessor.cs</Link>
+    </Compile>
     <Compile Include="..\LocusCommon\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
