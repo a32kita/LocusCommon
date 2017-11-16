@@ -10,7 +10,7 @@ namespace LocusCommon.Windows.ViewModels
     /// <summary>
     /// このアプリケーションで使用するViewModelの基礎となるクラスを提供します。このクラスはインスタンス化出来ません。
     /// </summary>
-    public abstract class InternalViewModelBase : ViewModelBase
+    public abstract class ExtendedViewModelBase : ViewModelBase
     {
         // 非公開フィールド
         private Dictionary<string, Object> propertyValues;
@@ -21,7 +21,7 @@ namespace LocusCommon.Windows.ViewModels
         /// <summary>
         /// 新しい InternalViewModelBase クラスのインスタンスを初期化します。このコンストラクタは使用できません。
         /// </summary>
-        public InternalViewModelBase()
+        public ExtendedViewModelBase()
         {
             this.propertyValues = new Dictionary<string, object>();
         }

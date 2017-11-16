@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Collection\ObjectModel\" />
-    <Folder Include="Debug\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +50,7 @@
     <Compile Include="Collection\Specialized\NotifyCollectionChangedAction.cs" />
     <Compile Include="Collection\Specialized\NotifyCollectionChangedEventArgs.cs" />
     <Compile Include="Collection\Specialized\NotifyCollectionChangedEventHandler.cs" />
+    <None Include="Debug\ObjectExtensions.cs" />
     <Compile Include="IO\DistributableStream.cs" />
     <Compile Include="IO\InterceptableStream.cs" />
     <Compile Include="IO\QuickStreamWriter.cs" />

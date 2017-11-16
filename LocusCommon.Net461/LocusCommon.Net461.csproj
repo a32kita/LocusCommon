@@ -45,6 +45,9 @@
     <Compile Include="..\locuscommon\collection\generic\OverridableList.cs">
       <Link>Collection\Generic\OverridableList.cs</Link>
     </Compile>
+    <None Include="..\locuscommon\debug\ObjectExtensions.cs">
+      <Link>Debug\ObjectExtensions.cs</Link>
+    </None>
     <Compile Include="..\LocusCommon\IO\DistributableStream.cs">
       <Link>IO\DistributableStream.cs</Link>
     </Compile>
@@ -79,8 +82,6 @@
       <Link>Windows\ViewModels\ViewModelBase.cs</Link>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Debug\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
