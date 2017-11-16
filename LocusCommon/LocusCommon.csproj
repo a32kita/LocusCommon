@@ -59,6 +59,9 @@
     <Compile Include="Magics\EvalProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Text\TextArranger.cs" />
+    <None Include="Windows\ViewModels\ExtendedViewModelBase.cs" />
+    <None Include="Windows\ViewModels\ViewModelBase.cs" />
+    <None Include="Windows\ViewModels\DelegateCommand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

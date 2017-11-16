@@ -37,7 +37,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.Windows" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\LocusCommon\Collection\Generic\OverridableList.cs">
@@ -66,6 +68,15 @@
     </Compile>
     <Compile Include="..\LocusCommon\Text\TextArranger.cs">
       <Link>Text\TextArranger.cs</Link>
+    </Compile>
+    <Compile Include="..\locuscommon\windows\viewmodels\DelegateCommand.cs">
+      <Link>Windows\ViewModels\DelegateCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\locuscommon\windows\viewmodels\ExtendedViewModelBase.cs">
+      <Link>Windows\ViewModels\ExtendedViewModelBase.cs</Link>
+    </Compile>
+    <Compile Include="..\locuscommon\windows\viewmodels\ViewModelBase.cs">
+      <Link>Windows\ViewModels\ViewModelBase.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup />

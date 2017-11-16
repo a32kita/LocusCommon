@@ -64,9 +64,20 @@
     <Compile Include="..\LocusCommon\Text\TextArranger.cs">
       <Link>Text\TextArranger.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon\Windows\ViewModels\DelegateCommand.cs">
+      <Link>Windows\ViewModels\DelegateCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\Windows\ViewModels\ExtendedViewModelBase.cs">
+      <Link>Windows\ViewModels\ExtendedViewModelBase.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\Windows\ViewModels\ViewModelBase.cs">
+      <Link>Windows\ViewModels\ViewModelBase.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
