@@ -75,6 +75,9 @@
     <Compile Include="..\locuscommon\windows\viewmodels\DelegateCommand.cs">
       <Link>Windows\ViewModels\DelegateCommand.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon\Windows\ViewModels\DelegateCommandInitializeParameter.cs">
+      <Link>Windows\ViewModels\DelegateCommandInitializeParameter.cs</Link>
+    </Compile>
     <Compile Include="..\locuscommon\windows\viewmodels\ExtendedViewModelBase.cs">
       <Link>Windows\ViewModels\ExtendedViewModelBase.cs</Link>
     </Compile>

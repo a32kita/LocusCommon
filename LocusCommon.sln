@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon", "LocusCommon\LocusCommon.csproj", "{FF276C22-29A0-4CBE-93AD-996998D98916}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Net461", "LocusCommon.Net461\LocusCommon.Net461.csproj", "{01CD7061-A424-41F0-A85F-CEB808CAFBA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Net45", "LocusCommon.Net45\LocusCommon.Net45.csproj", "{A2A8E19A-9DC6-43D6-8BCC-0D4A2AB0C7BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiTestWPF.Net45", "GuiTestWPF.Net45\GuiTestWPF.Net45.csproj", "{C1DAB24F-37DE-4F48-8650-ED348A082EA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A2A8E19A-9DC6-43D6-8BCC-0D4A2AB0C7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2A8E19A-9DC6-43D6-8BCC-0D4A2AB0C7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2A8E19A-9DC6-43D6-8BCC-0D4A2AB0C7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1DAB24F-37DE-4F48-8650-ED348A082EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1DAB24F-37DE-4F48-8650-ED348A082EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1DAB24F-37DE-4F48-8650-ED348A082EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1DAB24F-37DE-4F48-8650-ED348A082EA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{13AAED81-42DD-47FB-AD20-4114C75E88CD} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 		{9C252D7D-7817-49E7-97D2-D25740E0A33C} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
+		{C1DAB24F-37DE-4F48-8650-ED348A082EA5} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1ACE4463-AE92-486C-92E2-B0272E70B1B3}

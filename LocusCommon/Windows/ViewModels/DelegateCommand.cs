@@ -37,6 +37,9 @@ namespace LocusCommon.Windows.ViewModels
         /// <param name="canExecute"></param>
         public DelegateCommand(Action<Object> command, Func<Object, bool> canExecute)
         {
+            if (command == null)
+                throw new ArgumentNullException("command");
+
             if (canExecute == null)
                 canExecute = param => true;
 
@@ -50,6 +53,16 @@ namespace LocusCommon.Windows.ViewModels
         /// <param name="command"></param>
         public DelegateCommand(Action<Object> command)
             : this(command, null)
+        {
+            // 実装なし
+        }
+
+        /// <summary>
+        /// 新しい DelegateCommand クラスのインスタンスを初期化します。
+        /// </summary>
+        /// <param name="parameter"></param>
+        public DelegateCommand(DelegateCommandInitializeParameter parameter)
+            : this(parameter.Command, parameter.CanExecute)
         {
             // 実装なし
         }
