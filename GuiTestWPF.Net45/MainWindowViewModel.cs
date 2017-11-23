@@ -52,7 +52,7 @@ namespace GuiTestWPF.Net45
         {
             var alphaTestBlockButtonCommandParam = new DelegateCommandInitializeParameter()
             {
-                Command = param => MessageBox.Show(""),
+                Command = param => MessageBox.Show("hello, world!!"),
                 CanExecute = param => this.AlphaTestBlockCheckBoxChecked
             };
 

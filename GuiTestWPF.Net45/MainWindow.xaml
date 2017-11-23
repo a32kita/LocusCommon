@@ -18,10 +18,13 @@
             </Style>
         </StackPanel.Resources>
         
-        <TextBlock Style="{StaticResource titleTextBlockStyle}">ViewModelBase :: CanExecuteChanged</TextBlock>
+        <TextBlock Style="{StaticResource titleTextBlockStyle}">(Alpha) ViewModelBase :: CanExecuteChanged</TextBlock>
         <StackPanel Orientation="Horizontal">
-            <CheckBox Checked="{Binding AlphaTestBlockCheckBoxChecked}">CanExecute</CheckBox>
+            <CheckBox IsChecked="{Binding AlphaTestBlockCheckBoxChecked}">CanExecute</CheckBox>
             <Button Margin="40, 0, 0, 0" Width="150" Command="{Binding AlphaTestBlockButtonCommand}">Button</Button>
         </StackPanel>
+
+        <TextBlock Style="{StaticResource titleTextBlockStyle}">(Bravo) ViewModelBase :: CanExecuteChanged</TextBlock>
+        
     </StackPanel>
 </Window>
