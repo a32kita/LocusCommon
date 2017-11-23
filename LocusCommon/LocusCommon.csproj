@@ -50,6 +50,7 @@
     <Compile Include="Collection\Specialized\NotifyCollectionChangedAction.cs" />
     <Compile Include="Collection\Specialized\NotifyCollectionChangedEventArgs.cs" />
     <Compile Include="Collection\Specialized\NotifyCollectionChangedEventHandler.cs" />
+    <None Include="Windows\ViewModels\DelegateCommandInitializeParameter.cs" />
     <None Include="Debug\ObjectExtensions.cs" />
     <Compile Include="IO\DistributableStream.cs" />
     <Compile Include="IO\InterceptableStream.cs" />
