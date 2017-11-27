@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Windows.Controls;
+using System.Windows;
 
 namespace LocusCommon.Windows.ViewModels
 {
@@ -15,7 +15,7 @@ namespace LocusCommon.Windows.ViewModels
         /// <summary>
         /// このビューモデルでバインドのターゲットとなるコントロールを取得します。
         /// </summary>
-        Control Target
+        UIElement Target
         {
             get;
         }
