@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace LocusCommon.Windows.ViewModels
@@ -14,11 +15,11 @@ namespace LocusCommon.Windows.ViewModels
         // 公開プロパティ
 
         /// <summary>
-        /// このビューモデルでバインドのターゲットとなるコントロールを取得します。
+        /// このビューモデルでバインドのターゲットとなる UIElement を取得します。
         /// </summary>
-        public Control Target
+        public UIElement Target
         {
-            get => this.GetBindingValue<Control>(nameof(this.Target));
+            get => this.GetBindingValue<UIElement>(nameof(this.Target));
             set => this.SetBindingValue(nameof(this.Target), value);
         }
 
