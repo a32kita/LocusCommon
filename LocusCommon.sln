@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{6E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Windows.Controls", "LocusCommon.Windows.Controls\LocusCommon.Windows.Controls.csproj", "{DA2F7853-ABC1-40BE-A605-68F7ADF50479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Windows.Controls.Net45", "LocusCommon.Windows.Controls.Net45\LocusCommon.Windows.Controls.Net45.csproj", "{36F5A972-56E4-4E06-8CD2-132038528D9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{DA2F7853-ABC1-40BE-A605-68F7ADF50479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA2F7853-ABC1-40BE-A605-68F7ADF50479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA2F7853-ABC1-40BE-A605-68F7ADF50479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F5A972-56E4-4E06-8CD2-132038528D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F5A972-56E4-4E06-8CD2-132038528D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F5A972-56E4-4E06-8CD2-132038528D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F5A972-56E4-4E06-8CD2-132038528D9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{9C252D7D-7817-49E7-97D2-D25740E0A33C} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 		{C1DAB24F-37DE-4F48-8650-ED348A082EA5} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 		{DA2F7853-ABC1-40BE-A605-68F7ADF50479} = {6E43A09B-34F7-404A-9067-1E576AC920B5}
+		{36F5A972-56E4-4E06-8CD2-132038528D9E} = {6E43A09B-34F7-404A-9067-1E576AC920B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1ACE4463-AE92-486C-92E2-B0272E70B1B3}
