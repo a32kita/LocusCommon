@@ -98,6 +98,10 @@
       <Project>{a2a8e19a-9dc6-43d6-8bcc-0d4a2ab0c7be}</Project>
       <Name>LocusCommon.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LocusCommon.Windows.Controls.Net45\LocusCommon.Windows.Controls.Net45.csproj">
+      <Project>{36f5a972-56e4-4e06-8cd2-132038528d9e}</Project>
+      <Name>LocusCommon.Windows.Controls.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

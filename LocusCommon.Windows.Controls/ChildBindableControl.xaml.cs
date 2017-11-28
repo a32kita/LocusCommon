@@ -40,7 +40,7 @@ namespace LocusCommon.Windows.Controls
             var instance = (self)d;
             var oldValue = (IChildControlViewModel)e.OldValue;
             var newValue = (IChildControlViewModel)e.NewValue;
-
+            
             if (oldValue?.Target != null)
                 instance.MainGrid.Children.Remove(oldValue.Target);
 
