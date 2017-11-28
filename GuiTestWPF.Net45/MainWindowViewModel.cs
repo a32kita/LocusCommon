@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 using LocusCommon.Windows.ViewModels;
 
@@ -29,6 +31,15 @@ namespace GuiTestWPF.Net45
         {
             get => this.GetBindingValue<bool>(nameof(this.AlphaTestBlockCheckBoxChecked));
             set => this.SetBindingValue(nameof(this.AlphaTestBlockCheckBoxChecked), value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IChildControlViewModel BravoTestBlockChildViewModel
+        {
+            get => this.GetBindingValue<IChildControlViewModel>(nameof(this.BravoTestBlockChildViewModel));
+            set => this.SetBindingValue(nameof(this.BravoTestBlockChildViewModel), value);
         }
 
 
@@ -57,6 +68,22 @@ namespace GuiTestWPF.Net45
             };
 
             this.alphaTestBlockButtonCommand = new DelegateCommand(alphaTestBlockButtonCommandParam);
+            this.BravoTestBlockChildViewModel = new TestChildViewModel();
+        }
+
+
+        // 内部クラス
+
+        private class TestChildViewModel : ChildControlViewModelBase
+        {
+            public TestChildViewModel()
+            {
+                this.Target = new Grid()
+                {
+                    Background = Brushes.Blue,
+                    Height = 10
+                };
+            }
         }
     }
 }
