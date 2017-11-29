@@ -54,6 +54,9 @@
       <DependentUpon>ChildBindableControl.xaml</DependentUpon>
       <Link>ChildBindableControl.xaml.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon.Windows.Controls\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\LocusCommon.Windows.Controls\ViewModels\ChildControlViewModelBase.cs">
       <Link>ViewModels\ChildControlViewModelBase.cs</Link>
     </Compile>

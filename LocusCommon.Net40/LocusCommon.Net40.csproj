@@ -40,6 +40,9 @@
     <None Include="..\LocusCommon\Debug\ObjectExtensions.cs">
       <Link>Debug\ObjectExtensions.cs</Link>
     </None>
+    <Compile Include="..\LocusCommon\Drawing\ImageExtensions.cs">
+      <Link>Drawing\ImageExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\LocusCommon\IO\DistributableStream.cs">
       <Link>IO\DistributableStream.cs</Link>
     </Compile>
@@ -81,6 +84,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
