@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon", "LocusCommon\LocusCommon.csproj", "{FF276C22-29A0-4CBE-93AD-996998D98916}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -28,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Windows.Controls", "LocusCommon.Windows.Controls\LocusCommon.Windows.Controls.csproj", "{DA2F7853-ABC1-40BE-A605-68F7ADF50479}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Windows.Controls.Net45", "LocusCommon.Windows.Controls.Net45\LocusCommon.Windows.Controls.Net45.csproj", "{36F5A972-56E4-4E06-8CD2-132038528D9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Windows.Controls.Net461", "LocusCommon.Windows.Controls.Net461\LocusCommon.Windows.Controls.Net461.csproj", "{24B4F9C0-2FA4-488D-88ED-1EBBA9D1352C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{36F5A972-56E4-4E06-8CD2-132038528D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36F5A972-56E4-4E06-8CD2-132038528D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36F5A972-56E4-4E06-8CD2-132038528D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24B4F9C0-2FA4-488D-88ED-1EBBA9D1352C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B4F9C0-2FA4-488D-88ED-1EBBA9D1352C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B4F9C0-2FA4-488D-88ED-1EBBA9D1352C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B4F9C0-2FA4-488D-88ED-1EBBA9D1352C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{C1DAB24F-37DE-4F48-8650-ED348A082EA5} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 		{DA2F7853-ABC1-40BE-A605-68F7ADF50479} = {6E43A09B-34F7-404A-9067-1E576AC920B5}
 		{36F5A972-56E4-4E06-8CD2-132038528D9E} = {6E43A09B-34F7-404A-9067-1E576AC920B5}
+		{24B4F9C0-2FA4-488D-88ED-1EBBA9D1352C} = {6E43A09B-34F7-404A-9067-1E576AC920B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1ACE4463-AE92-486C-92E2-B0272E70B1B3}
