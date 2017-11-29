@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="GuiTestWPF.Net45.BlendTestPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GuiTestWPF.Net45"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Path Data="M107.56579,75.986842 C151.38312,119.80418 152.54961,118.89718 151.47347,119.89458 70.55242,194.89458 76.473759,30.092219 149.4994,116.93381" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="65.072" Margin="92.747,75.987,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="59.948"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="66.119" Margin="25.658,159.868,0,0" Stroke="Black" VerticalAlignment="Top" Width="104.605" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="35.465"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Path Data="M214.14474,210.19737 C110.52632,266.44737 30.091835,234.36879 30.091835,234.36879 L13.315634,139.63207 56.736497,85.355195 172.19708,101.14494 C172.19708,101.14494 197.85498,101.14494 212.65762,143.57919 227.46026,186.01343 274.82871,154.43446 231.40763,210.6845 187.98656,266.93455 214.14474,210.19737 214.14474,210.19737 z" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="159.121" Margin="13.316,85.355,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="236.988"/>
+        
+    </Grid>
+</UserControl>
