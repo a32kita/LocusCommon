@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if NET40||NET45||NET461
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -47,3 +49,5 @@ namespace LocusCommon.Windows.ViewModels
         }
     }
 }
+
+#endif
