@@ -8,7 +8,8 @@
              xmlns:bh="clr-namespace:LocusCommon.Windows.Controls.InternalBehaviors"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             Height="Auto" Width="Auto">
+             Height="Auto" Width="Auto"
+             >
     <UserControl.Resources>
         <vm:ImageButtonViewModel x:Key="ViewModelKey"/>
     </UserControl.Resources>
@@ -17,7 +18,7 @@
             <Grid>
                 <Image Source="{Binding ImageSource}"/>
                 <TextBlock Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <Rectangle />
+                <Rectangle Fill="{Binding HilightPanelBrush}"/>
             </Grid>
         </Border>
     </Grid>

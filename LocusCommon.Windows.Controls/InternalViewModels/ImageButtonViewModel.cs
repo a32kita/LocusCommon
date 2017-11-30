@@ -73,6 +73,15 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
         }
 
         /// <summary>
+        /// ハイライトパネルの色を表す Brush を取得または設定します。
+        /// </summary>
+        public Brush HilightPanelBrush
+        {
+            get => this.GetBindingValue<Brush>(nameof(this.HilightPanelBrush));
+            set => this.SetBindingValue(nameof(this.HilightPanelBrush), value);
+        }
+
+        /// <summary>
         /// ボタンに表示するテキストを取得または設定します．
         /// </summary>
         public string Text
@@ -103,6 +112,7 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
             this.BorderBrush = Brushes.Transparent;
             this.Background = self.backgroundBrush;
             this.MouseOverColor = self.mouseOverColor;
+            this.HilightPanelBrush = Brushes.Transparent;
             this.Text = "Button";
             this.FontSize = 14;
         }
