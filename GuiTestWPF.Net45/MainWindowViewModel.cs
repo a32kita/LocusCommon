@@ -42,6 +42,15 @@ namespace GuiTestWPF.Net45
             set => this.SetBindingValue(nameof(this.BravoTestBlockChildViewModel), value);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CharlieButtonText
+        {
+            get => this.GetBindingValue<string>(nameof(this.CharlieButtonText));
+            set => this.SetBindingValue(nameof(this.CharlieButtonText), value);
+        }
+
 
         // 公開プロパティ :: コマンド
 
@@ -69,6 +78,7 @@ namespace GuiTestWPF.Net45
 
             this.alphaTestBlockButtonCommand = new DelegateCommand(alphaTestBlockButtonCommandParam);
             this.BravoTestBlockChildViewModel = new TestChildViewModel();
+            this.CharlieButtonText = "Charlie Button Test";
         }
 
 

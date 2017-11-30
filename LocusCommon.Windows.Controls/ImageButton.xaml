@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="LocusCommon.Windows.Controls.ImageButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LocusCommon.Windows.Controls"
+             xmlns:vm="clr-namespace:LocusCommon.Windows.Controls.InternalViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Height="Auto" Width="Auto">
+    <UserControl.Resources>
+        <vm:ImageButtonViewModel x:Key="ViewModelKey"/>
+    </UserControl.Resources>
+    <Grid DataContext="{DynamicResource ResourceKey=ViewModelKey}">
+        <Border BorderThickness="{Binding BorderThickness}" BorderBrush="{Binding BorderBrush}">
+            <Grid>
+                <Image Source="{Binding ImageSource}"/>
+                <TextBlock Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
