@@ -80,6 +80,9 @@
     <Compile Include="..\LocusCommon\Text\TextArranger.cs">
       <Link>Text\TextArranger.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon\Windows\Behaviors\BehaviorBase.cs">
+      <Link>Windows\Behaviors\BehaviorBase.cs</Link>
+    </Compile>
     <Compile Include="..\locuscommon\windows\viewmodels\DelegateCommand.cs">
       <Link>Windows\ViewModels\DelegateCommand.cs</Link>
     </Compile>
