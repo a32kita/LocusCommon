@@ -58,6 +58,9 @@
       <DependentUpon>ImageButton.xaml</DependentUpon>
       <Link>ImageButton.xaml.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon.Windows.Controls\InternalBehaviors\ImageButtonBehavior.cs">
+      <Link>InternalBehaviors\ImageButtonBehavior.cs</Link>
+    </Compile>
     <Compile Include="..\LocusCommon.Windows.Controls\InternalViewModels\ImageButtonViewModel.cs">
       <Link>InternalViewModels\ImageButtonViewModel.cs</Link>
     </Compile>

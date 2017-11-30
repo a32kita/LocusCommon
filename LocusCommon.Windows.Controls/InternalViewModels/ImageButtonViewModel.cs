@@ -9,6 +9,8 @@ using LocusCommon.Windows.ViewModels;
 
 namespace LocusCommon.Windows.Controls.InternalViewModels
 {
+    using self = ImageButtonViewModel;
+
     /// <summary>
     /// 
     /// </summary>
@@ -17,6 +19,12 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
 #endif
     public class ImageButtonViewModel : ExtendedViewModelBase
     {
+        // 非公開静的フィールド
+        private static Brush backgroundBrush;
+        private static Brush borderBrush;
+        private static Brush mouseOverColor;
+
+
         // 公開プロパティ
 
         /// <summary>
@@ -44,6 +52,24 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
         {
             get => this.GetBindingValue<Brush>(nameof(this.BorderBrush));
             set => this.SetBindingValue(nameof(this.BorderBrush), value);
+        }
+
+        /// <summary>
+        /// コントロールの背景色を表す Brush を取得または設定します。
+        /// </summary>
+        public Brush Background
+        {
+            get => this.GetBindingValue<Brush>(nameof(this.Background));
+            set => this.SetBindingValue(nameof(this.Background), value);
+        }
+
+        /// <summary>
+        /// マウスカーソルがコントロール上にあるときに重ねる色を表す Brush を取得または設定します。
+        /// </summary>
+        public Brush MouseOverColor
+        {
+            get => this.GetBindingValue<Brush>(nameof(this.MouseOverColor));
+            set => this.SetBindingValue(nameof(this.MouseOverColor), value);
         }
 
         /// <summary>
@@ -75,8 +101,23 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
             this.ImageSource = null;
             this.BorderThickness = new Thickness(1);
             this.BorderBrush = Brushes.Transparent;
+            this.Background = self.backgroundBrush;
+            this.MouseOverColor = self.mouseOverColor;
             this.Text = "Button";
             this.FontSize = 14;
+        }
+
+
+        // 静的コンストラクタ
+
+        /// <summary>
+        /// ImageButtonViewModel クラスを初期化します。
+        /// </summary>
+        static ImageButtonViewModel()
+        {
+            self.backgroundBrush = new SolidColorBrush(Color.FromArgb(100, 150, 150, 150));
+            self.borderBrush = new SolidColorBrush(Color.FromArgb(100, 200, 200, 200));
+            self.mouseOverColor = new SolidColorBrush(Color.FromArgb(100, 255, 255, 255));
         }
     }
 }
