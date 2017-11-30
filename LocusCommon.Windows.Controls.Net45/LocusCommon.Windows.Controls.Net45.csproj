@@ -54,6 +54,13 @@
       <DependentUpon>ChildBindableControl.xaml</DependentUpon>
       <Link>ChildBindableControl.xaml.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon.Windows.Controls\ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+      <Link>ImageButton.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon.Windows.Controls\InternalViewModels\ImageButtonViewModel.cs">
+      <Link>InternalViewModels\ImageButtonViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\LocusCommon.Windows.Controls\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
@@ -67,6 +74,11 @@
   <ItemGroup>
     <Page Include="..\LocusCommon.Windows.Controls\ChildBindableControl.xaml">
       <Link>ChildBindableControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\LocusCommon.Windows.Controls\ImageButton.xaml">
+      <Link>ImageButton.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
