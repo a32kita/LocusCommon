@@ -75,6 +75,28 @@ namespace LocusCommon.Windows.Controls
             if (vm != null)
                 vm.Text = (string)e.NewValue;
         }
+        
+
+        /// <summary>
+        /// ハイライトパネルの色を表す Brush を取得または設定します。
+        /// </summary>
+        public Brush HilightPanelBrush
+        {
+            get { return (Brush)GetValue(HilightPanelBrushProperty); }
+            set { SetValue(HilightPanelBrushProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for HilightPanelBrush.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty HilightPanelBrushProperty =
+            DependencyProperty.Register("HilightPanelBrush", typeof(Brush), typeof(self), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(60, 255, 255, 255))));
+
+        private static void OnHilightPanelBrushPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var vm = self.getViewModel(d);
+            if (vm != null)
+                vm.HilightPanelBrush = (Brush)e.NewValue;
+        }
+
 
 
         // コンストラクタ
