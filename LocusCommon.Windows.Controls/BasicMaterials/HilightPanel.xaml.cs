@@ -57,7 +57,7 @@ namespace LocusCommon.Windows.Controls.BasicMaterials
             InitializeComponent();
 
             this.MainRectangle.Fill = this.NormalBrush;
-            this.MouseEnter += (sender, e) => this.MainRectangle.Fill = this.HilightBrush;
+            this.MouseMove += (sender, e) => this.MainRectangle.Fill = this.HilightBrush;
             this.MouseLeave += (sender, e) => this.MainRectangle.Fill = this.NormalBrush;
         }
 

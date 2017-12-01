@@ -88,7 +88,7 @@ namespace LocusCommon.Windows.Controls
 
         // Using a DependencyProperty as the backing store for HilightPanelBrush.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty HilightPanelBrushProperty =
-            DependencyProperty.Register("HilightPanelBrush", typeof(Brush), typeof(self), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(60, 255, 255, 255))));
+            DependencyProperty.Register("HilightPanelBrush", typeof(Brush), typeof(self), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(120, 255, 255, 255))));
 
         private static void OnHilightPanelBrushPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
