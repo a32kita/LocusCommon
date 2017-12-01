@@ -51,6 +51,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\LocusCommon.Windows.Controls\BasicMaterials\HilightPanel.xaml.cs">
+      <Link>BasicMaterials\HilightPanel.xaml.cs</Link>
+      <DependentUpon>HilightPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="..\LocusCommon.Windows.Controls\ChildBindableControl.xaml.cs">
       <Link>ChildBindableControl.xaml.cs</Link>
       <DependentUpon>ChildBindableControl.xaml</DependentUpon>
@@ -76,6 +80,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="..\LocusCommon.Windows.Controls\BasicMaterials\HilightPanel.xaml">
+      <Link>BasicMaterials\HilightPanel.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\LocusCommon.Windows.Controls\ChildBindableControl.xaml">
       <Link>ChildBindableControl.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -87,5 +96,6 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
