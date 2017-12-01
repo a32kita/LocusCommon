@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LocusCommon.Windows.Controls"
+             xmlns:mat="clr-namespace:LocusCommon.Windows.Controls.BasicMaterials"
              xmlns:vm="clr-namespace:LocusCommon.Windows.Controls.InternalViewModels"
              xmlns:bh="clr-namespace:LocusCommon.Windows.Controls.InternalBehaviors"
              mc:Ignorable="d" 
@@ -18,7 +19,7 @@
             <Grid>
                 <Image Source="{Binding ImageSource}"/>
                 <TextBlock Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <Rectangle Fill="{Binding HilightPanelBrush}"/>
+                <mat:HilightPanel HilightBrush="{Binding HilightPanelBrush}"/>
             </Grid>
         </Border>
     </Grid>
