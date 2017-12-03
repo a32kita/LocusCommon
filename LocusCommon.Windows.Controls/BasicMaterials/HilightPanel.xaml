@@ -7,5 +7,5 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              Background="Transparent">
-    <Rectangle Name="MainRectangle"/>
+    <Rectangle Name="MainRectangle" Fill="Transparent"/>
 </UserControl>
