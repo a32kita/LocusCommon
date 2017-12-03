@@ -56,9 +56,27 @@ namespace LocusCommon.Windows.Controls.BasicMaterials
         {
             InitializeComponent();
 
-            this.MainRectangle.Fill = this.NormalBrush;
-            this.MouseMove += (sender, e) => this.MainRectangle.Fill = this.HilightBrush;
-            this.MouseLeave += (sender, e) => this.MainRectangle.Fill = this.NormalBrush;
+            //this.MainRectangle.Fill = this.NormalBrush;
+            this.MouseEnter += (sender, e) => this._setMainRectangleBrush(this.HilightBrush);
+            this.MouseLeave += (sender, e) => this._setMainRectangleBrush(this.NormalBrush);
+        }
+
+
+        // 非公開メソッド
+
+        private int count = 0;
+        private void _setMainRectangleBrush(Brush brush)
+        {
+            this.MainRectangle.Fill = brush;
+
+#if DEBUG
+            string brushName = "undefined";
+            if (brush == this.HilightBrush)
+                brushName = "hilight";
+            else if (brush == this.NormalBrush)
+                brushName = "normal";
+            Console.Error.WriteLine("Color changed ({0}, {1})", ++count, brushName);
+#endif
         }
 
 
