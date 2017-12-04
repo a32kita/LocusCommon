@@ -29,6 +29,6 @@
         <lc:ChildBindableControl ChildControl="{Binding BravoTestBlockChildViewModel}"/>
 
         <TextBlock Style="{StaticResource titleTextBlockStyle}">(Charlie) ViewModelBase :: ChildBindableControl</TextBlock>
-        <lc:ImageButton Text="{Binding CharlieButtonText}"/>
+        <lc:ImageButton Text="{Binding CharlieButtonText}" BorderBrush="Red" BorderThickness="1"/>
     </StackPanel>
 </Window>

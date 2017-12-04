@@ -112,7 +112,7 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
             this.BorderBrush = Brushes.Transparent;
             this.Background = self.backgroundBrush;
             this.MouseOverColor = self.mouseOverColor;
-            this.HilightPanelBrush = Brushes.Transparent;
+            this.HilightPanelBrush = new SolidColorBrush(Color.FromArgb(60, 255, 255, 255));
             this.Text = "Button";
             this.FontSize = 14;
         }

@@ -70,6 +70,9 @@ namespace LocusCommon.Windows.Controls.BasicMaterials
             this.MainRectangle.Fill = brush;
 
 #if DEBUG
+            if (this.HilightBrush == this.NormalBrush)
+                Console.Error.WriteLine("Warning: this.HilightBrush == this.NormalBrush");
+
             string brushName = "undefined";
             if (brush == this.HilightBrush)
                 brushName = "hilight";

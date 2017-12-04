@@ -92,6 +92,18 @@ namespace LocusCommon.Windows.Controls
 
         private static void OnHilightPanelBrushPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+#if DEBUG
+            if (e.NewValue is SolidColorBrush)
+            {
+                var color = ((SolidColorBrush)e.NewValue).Color;
+                Console.Error.WriteLine("== ImageButton: OnHilightPanelBrushPropertyChanged ==");
+                Console.Error.WriteLine("A={0}", color.A);
+                Console.Error.WriteLine("R={0}", color.R);
+                Console.Error.WriteLine("G={0}", color.G);
+                Console.Error.WriteLine("B={0}", color.B);
+            }
+#endif
+
             var vm = self.getViewModel(d);
             if (vm != null)
                 vm.HilightPanelBrush = (Brush)e.NewValue;
