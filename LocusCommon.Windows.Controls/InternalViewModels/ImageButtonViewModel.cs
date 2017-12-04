@@ -37,6 +37,15 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
         }
 
         /// <summary>
+        /// Imageのストレッチを取得または設定します．
+        /// </summary>
+        public Stretch ImageStretch
+        {
+            get => this.GetBindingValue<Stretch>(nameof(this.ImageStretch));
+            set => this.SetBindingValue(nameof(this.ImageStretch), value);
+        }
+
+        /// <summary>
         /// コントロールの Border の太さを示す Thickness を取得または設定します．
         /// </summary>
         public Thickness BorderThickness
