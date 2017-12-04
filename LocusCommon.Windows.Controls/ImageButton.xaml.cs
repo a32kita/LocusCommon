@@ -23,6 +23,10 @@ namespace LocusCommon.Windows.Controls
     /// </summary>
     public partial class ImageButton : UserControl
     {
+        // 非公開フィールド
+        private RoutedEventHandler click;
+
+
         // 限定公開プロパティ
 
         /// <summary>
@@ -53,6 +57,27 @@ namespace LocusCommon.Windows.Controls
             var vm = self.getViewModel(d);
             if (vm != null)
                 vm.ImageSource = (ImageSource)e.NewValue;
+        }
+
+
+        /// <summary>
+        /// ImageStretchを取得または設定します．
+        /// </summary>
+        public Stretch ImageStretch
+        {
+            get { return (Stretch)GetValue(ImageStretchProperty); }
+            set { SetValue(ImageStretchProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ImageStretch.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ImageStretchProperty =
+            DependencyProperty.Register("ImageStretch", typeof(Stretch), typeof(self), new PropertyMetadata(Stretch.Fill));
+
+        private static void OnImageStretchPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var vm = self.getViewModel(d);
+            if (vm != null)
+                vm.ImageStretch = (Stretch)e.NewValue;
         }
 
 
@@ -110,6 +135,17 @@ namespace LocusCommon.Windows.Controls
         }
 
 
+        // 公開イベント
+
+        /// <summary>
+        /// ImageButton をクリックしたときに発生します．
+        /// </summary>
+        public event RoutedEventHandler Click
+        {
+            add => this.click += value;
+            remove => this.click -= value;
+        }
+
 
         // コンストラクタ
 
@@ -120,6 +156,9 @@ namespace LocusCommon.Windows.Controls
         {
             // コンポーネントのロード
             InitializeComponent();
+
+            // イベント
+            this.MouseLeftButtonDown += (sender, e) => this.click?.Invoke(this, e);
         }
 
 
@@ -152,6 +191,7 @@ namespace LocusCommon.Windows.Controls
                 if (vm != null)
                     vm.FontSize = (double)e.NewValue;
             }));
+            
         }
 
 

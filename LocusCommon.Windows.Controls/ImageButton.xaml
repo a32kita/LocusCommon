@@ -17,7 +17,7 @@
     <Grid DataContext="{DynamicResource ResourceKey=ViewModelKey}" Background="{Binding Background}">
         <Border BorderThickness="{Binding BorderThickness}" BorderBrush="{Binding BorderBrush}">
             <Grid>
-                <Image Source="{Binding ImageSource}"/>
+                <Image Source="{Binding ImageSource}" Stretch="{Binding ImageStretch}"/>
                 <TextBlock Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <mat:HilightPanel HilightBrush="{Binding HilightPanelBrush}"/>
             </Grid>
