@@ -10,7 +10,8 @@ using System.Windows.Input;
 namespace LocusCommon.Windows.ViewModels
 {
     /// <summary>
-    /// このアプリケーションで使用するViewModelの基礎となるクラスを提供します。このクラスはインスタンス化出来ません。
+    /// このアプリケーションで使用するViewModelの基礎となるクラスを提供します。
+    /// このクラスは継承専用で、直接のインスタンス化は出来ません。
     /// </summary>
     public abstract class ExtendedViewModelBase : ViewModelBase
     {
@@ -37,7 +38,11 @@ namespace LocusCommon.Windows.ViewModels
         /// <typeparam name="T">プロパティの型</typeparam>
         /// <param name="propertyName">バインディングプロパティ名</param>
         /// <returns></returns>
+#if NET45||NET461
         protected T GetBindingValue<T>(string propertyName)
+#else
+        protected T GetBindingValue<T>(string propertyName)
+#endif
         {
             if (!this.propertyValues.ContainsKey(propertyName))
                 return default(T);
