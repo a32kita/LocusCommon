@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -14,7 +15,8 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
     /// <summary>
     /// 
     /// </summary>
-#if Release
+#if DEBUG == false
+    [Browsable(false)]
     [EditorBrowsable(EditorBrowsableState.Never)]
 #endif
     public class ImageButtonViewModel : ExtendedViewModelBase
