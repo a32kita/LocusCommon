@@ -89,7 +89,7 @@ namespace LocusCommon.Windows.ViewModels
         /// </summary>
         /// <param name="value"></param>
         /// <param name="propertyName">このパラメータは使用されません。</param>
-        protected void SetBindingValue(Object value, [Browsable(false)][CallerMemberName] string propertyName = null)
+        protected void SetBindingValueQuick(Object value, [Browsable(false)][CallerMemberName] string propertyName = null)
         {
             this.SetBindingValue(propertyName, value);
         }

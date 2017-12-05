@@ -29,8 +29,8 @@ namespace GuiTestWPF.Net45
         /// </summary>
         public bool AlphaTestBlockCheckBoxChecked
         {
-            get => this.GetBindingValue<bool>(nameof(this.AlphaTestBlockCheckBoxChecked));
-            set => this.SetBindingValue(nameof(this.AlphaTestBlockCheckBoxChecked), value);
+            get => this.GetBindingValue<bool>();
+            set => this.SetBindingValueQuick(value);
         }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace GuiTestWPF.Net45
         /// </summary>
         public IChildControlViewModel BravoTestBlockChildViewModel
         {
-            get => this.GetBindingValue<IChildControlViewModel>(nameof(this.BravoTestBlockChildViewModel));
-            set => this.SetBindingValue(nameof(this.BravoTestBlockChildViewModel), value);
+            get => this.GetBindingValue<IChildControlViewModel>();
+            set => this.SetBindingValueQuick(value);
         }
 
         /// <summary>
@@ -47,8 +47,8 @@ namespace GuiTestWPF.Net45
         /// </summary>
         public string CharlieButtonText
         {
-            get => this.GetBindingValue<string>(nameof(this.CharlieButtonText));
-            set => this.SetBindingValue(nameof(this.CharlieButtonText), value);
+            get => this.GetBindingValue<string>();
+            set => this.SetBindingValueQuick(value);
         }
 
 
