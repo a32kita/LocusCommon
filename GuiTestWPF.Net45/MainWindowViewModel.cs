@@ -37,9 +37,6 @@ namespace GuiTestWPF.Net45
         /// 
         /// </summary>
         public IChildControlViewModel BravoTestBlockChildViewModel
-
-
-
         {
             get => this.GetBindingValue<IChildControlViewModel>();
             set => this.SetBindingValueQuick(value);
