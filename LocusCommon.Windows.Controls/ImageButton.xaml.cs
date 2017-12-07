@@ -32,7 +32,7 @@ namespace LocusCommon.Windows.Controls
         /// <summary>
         /// 現在の DataContext を ImageButtonViewModel として取得します．
         /// </summary>
-        public ImageButtonViewModel ViewModel
+        internal ImageButtonViewModel ViewModel
         {
             get => this.DataContext as ImageButtonViewModel;
         }
@@ -71,7 +71,7 @@ namespace LocusCommon.Windows.Controls
 
         // Using a DependencyProperty as the backing store for ImageStretch.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ImageStretchProperty =
-            DependencyProperty.Register("ImageStretch", typeof(Stretch), typeof(self), new PropertyMetadata(Stretch.Fill));
+            DependencyProperty.Register("ImageStretch", typeof(Stretch), typeof(self), new PropertyMetadata(Stretch.Fill, self.OnImageStretchPropertyChanged));
 
         private static void OnImageStretchPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -113,7 +113,7 @@ namespace LocusCommon.Windows.Controls
 
         // Using a DependencyProperty as the backing store for HilightPanelBrush.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty HilightPanelBrushProperty =
-            DependencyProperty.Register("HilightPanelBrush", typeof(Brush), typeof(self), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(120, 255, 255, 255))));
+            DependencyProperty.Register("HilightPanelBrush", typeof(Brush), typeof(self), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(120, 255, 255, 255)), self.OnHilightPanelBrushPropertyChanged));
 
         private static void OnHilightPanelBrushPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
