@@ -1,4 +1,4 @@
-﻿#if NET40||NET45||NET461
+﻿#if NET35||NET40||NET45||NET461
 
 using System;
 using System.Collections.Generic;
