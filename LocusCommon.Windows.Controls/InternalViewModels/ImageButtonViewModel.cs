@@ -119,6 +119,7 @@ namespace LocusCommon.Windows.Controls.InternalViewModels
         public ImageButtonViewModel()
         {
             this.ImageSource = null;
+            this.ImageStretch = Stretch.Uniform;
             this.BorderThickness = new Thickness(1);
             this.BorderBrush = Brushes.Transparent;
             this.Background = self.backgroundBrush;

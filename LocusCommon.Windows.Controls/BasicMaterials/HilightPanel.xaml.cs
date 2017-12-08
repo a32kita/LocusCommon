@@ -22,8 +22,10 @@ namespace LocusCommon.Windows.Controls.BasicMaterials
     public partial class HilightPanel : UserControl
     {
         // 依存関係プロパティ
-        
 
+        /// <summary>
+        /// 通常時の色を示す Brush クラスのインスタンスを取得または設定します．
+        /// </summary>
         public Brush NormalBrush
         {
             get { return (Brush)GetValue(NormalBrushProperty); }
@@ -32,10 +34,12 @@ namespace LocusCommon.Windows.Controls.BasicMaterials
 
         // Using a DependencyProperty as the backing store for NormalBrush.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty NormalBrushProperty =
-            DependencyProperty.Register("NormalBrush", typeof(Brush), typeof(self), new PropertyMetadata(Brushes.Transparent));
+            DependencyProperty.Register("NormalBrush", typeof(Brush), typeof(self), new PropertyMetadata(null));
 
 
-
+        /// <summary>
+        /// ハイライト表示時の色を示す Brush クラスのインスタンスを取得または設定します．
+        /// </summary>
         public Brush HilightBrush
         {
             get { return (Brush)GetValue(HilightBrushProperty); }
@@ -44,7 +48,7 @@ namespace LocusCommon.Windows.Controls.BasicMaterials
 
         // Using a DependencyProperty as the backing store for HilightBrush.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty HilightBrushProperty =
-            DependencyProperty.Register("HilightBrush", typeof(Brush), typeof(self), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(80, 255, 255, 255))));
+            DependencyProperty.Register("HilightBrush", typeof(Brush), typeof(self), new PropertyMetadata(null));
         
 
         // コンストラクタ
@@ -56,7 +60,7 @@ namespace LocusCommon.Windows.Controls.BasicMaterials
         {
             InitializeComponent();
 
-            //this.MainRectangle.Fill = this.NormalBrush;
+            this.MainRectangle.Fill = this.NormalBrush;
             this.MouseEnter += (sender, e) => this._setMainRectangleBrush(this.HilightBrush);
             this.MouseLeave += (sender, e) => this._setMainRectangleBrush(this.NormalBrush);
         }
@@ -64,7 +68,9 @@ namespace LocusCommon.Windows.Controls.BasicMaterials
 
         // 非公開メソッド
 
+#if DEBUG
         private int count = 0;
+#endif
         private void _setMainRectangleBrush(Brush brush)
         {
             this.MainRectangle.Fill = brush;

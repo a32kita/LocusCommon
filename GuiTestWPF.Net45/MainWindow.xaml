@@ -28,7 +28,10 @@
         <TextBlock Style="{StaticResource titleTextBlockStyle}">(Bravo) ViewModelBase :: ChildBindableControl</TextBlock>
         <lc:ChildBindableControl ChildControl="{Binding BravoTestBlockChildViewModel}"/>
 
-        <TextBlock Style="{StaticResource titleTextBlockStyle}">(Charlie) ViewModelBase :: ChildBindableControl</TextBlock>
+        <TextBlock Style="{StaticResource titleTextBlockStyle}">(Charlie) ViewModelBase :: ImageButton</TextBlock>
         <lc:ImageButton Text="{Binding CharlieButtonText}" BorderBrush="Red" BorderThickness="1"/>
+
+        <TextBlock Style="{StaticResource titleTextBlockStyle}">(Delta) ViewModelBase :: ImageButton Advanced</TextBlock>
+        <lc:ImageButton Text="" BorderThickness="1" ImageSource="DebugMaterials/sitelogobox_h50.png"/>
     </StackPanel>
 </Window>
