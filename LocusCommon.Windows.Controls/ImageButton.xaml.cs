@@ -71,7 +71,7 @@ namespace LocusCommon.Windows.Controls
 
         // Using a DependencyProperty as the backing store for ImageStretch.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ImageStretchProperty =
-            DependencyProperty.Register("ImageStretch", typeof(Stretch), typeof(self), new PropertyMetadata(Stretch.Fill, self.OnImageStretchPropertyChanged));
+            DependencyProperty.Register("ImageStretch", typeof(Stretch), typeof(self), new PropertyMetadata(Stretch.Uniform, self.OnImageStretchPropertyChanged));
 
         private static void OnImageStretchPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
