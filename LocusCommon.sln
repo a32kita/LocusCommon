@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Windows.Control
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Net35", "LocusCommon.Net35\LocusCommon.Net35.csproj", "{6176A970-74B6-4CEA-8C49-252F41C29C63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTest.Net45", "AndroidTest.Net45\AndroidTest.Net45.csproj", "{B0E474B5-F9D2-49A1-A8BB-A5B859198D71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,12 @@ Global
 		{6176A970-74B6-4CEA-8C49-252F41C29C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6176A970-74B6-4CEA-8C49-252F41C29C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6176A970-74B6-4CEA-8C49-252F41C29C63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0E474B5-F9D2-49A1-A8BB-A5B859198D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0E474B5-F9D2-49A1-A8BB-A5B859198D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0E474B5-F9D2-49A1-A8BB-A5B859198D71}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B0E474B5-F9D2-49A1-A8BB-A5B859198D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0E474B5-F9D2-49A1-A8BB-A5B859198D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0E474B5-F9D2-49A1-A8BB-A5B859198D71}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +102,7 @@ Global
 		{DA2F7853-ABC1-40BE-A605-68F7ADF50479} = {6E43A09B-34F7-404A-9067-1E576AC920B5}
 		{36F5A972-56E4-4E06-8CD2-132038528D9E} = {6E43A09B-34F7-404A-9067-1E576AC920B5}
 		{24B4F9C0-2FA4-488D-88ED-1EBBA9D1352C} = {6E43A09B-34F7-404A-9067-1E576AC920B5}
+		{B0E474B5-F9D2-49A1-A8BB-A5B859198D71} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1ACE4463-AE92-486C-92E2-B0272E70B1B3}
