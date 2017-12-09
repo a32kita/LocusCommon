@@ -7,11 +7,12 @@ namespace LocusCommon
     /// <summary>
     /// Locusライブラリの定義クラスであることを示し、追加情報を付与します。
     /// </summary>
-    [System.AttributeUsage(AttributeTargets.Class)]
+    [AttributeUsage(AttributeTargets.Class)]
     public sealed class LocusAttribute : Attribute
     {
         // 非公開フィールド
         private string purpose;
+        private string libraryTarget;
 
         
         // 公開プロパティ
@@ -25,6 +26,14 @@ namespace LocusCommon
             set { this.purpose = value; }
         }
 
+        /// <summary>
+        /// ライブラリのターゲットフレームワークを取得します．
+        /// </summary>
+        public string LibraryTarget
+        {
+            get { return this.libraryTarget; }
+        }
+
 
         // コンストラクタ
 
@@ -33,6 +42,26 @@ namespace LocusCommon
         /// </summary>
         public LocusAttribute()
         {
+            this.libraryTarget = "unknown";
+#if NET20
+            this.libraryTarget = "2.0";
+#endif
+
+#if NET35
+            this.libraryTarget = "3.5";
+#endif
+
+#if NET40
+            this.libraryTarget = "4.0";
+#endif
+
+#if NET45
+            this.libraryTarget = "4.5";
+#endif
+
+#if NET461
+            this.libraryTarget = "4.6.1";
+#endif
         }
     }
 }
