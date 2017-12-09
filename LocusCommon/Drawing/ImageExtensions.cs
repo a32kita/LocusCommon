@@ -1,4 +1,4 @@
-﻿#if NET40||NET45||NET461
+﻿#if NET40 || NET45 || NET461
 
 using System;
 using System.Collections.Generic;
@@ -19,6 +19,7 @@ namespace LocusCommon.Drawing
     /// <summary>
     /// System.Drawing.Image クラスに対する拡張メソッドを提供します。
     /// </summary>
+    [Locus(Purpose="System.Drawing.Image クラスに対する拡張メソッドを提供します。")]
     public static class ImageExtensions
     {
         // 非公開静的フィールド
