@@ -5,6 +5,9 @@ using System.Text;
 
 namespace LocusCommon.Serialization.Bases
 {
+    /// <summary>
+    /// LocusCommonの提供するFormatterクラスであることを表します。
+    /// </summary>
     public interface ILocusFormatter
     {
         // プロパティ
@@ -15,8 +18,9 @@ namespace LocusCommon.Serialization.Bases
         /// <summary>
         /// 指定したオブジェクトをシリアライズします。
         /// </summary>
+        /// <param name="stream"></param>
         /// <param name="obj"></param>
-        void Serialize(Object obj);
+        void Serialize(Stream stream, Object obj);
 
         /// <summary>
         /// 指定したストリームから、指定した型でデシリアライズします。
@@ -27,7 +31,7 @@ namespace LocusCommon.Serialization.Bases
         Object Deserialize(Stream stream, Type targetType);
 
         /// <summary>
-        /// 
+        /// 指定したストリームから、<typeparamref name="TTarget"/> でデシリアライズします。
         /// </summary>
         /// <typeparam name="TTarget"></typeparam>
         /// <param name="stream"></param>
