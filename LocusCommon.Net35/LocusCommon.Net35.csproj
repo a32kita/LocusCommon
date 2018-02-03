@@ -74,6 +74,9 @@
     <Compile Include="..\locuscommon\text\TextArranger.cs">
       <Link>Text\TextArranger.cs</Link>
     </Compile>
+    <Compile Include="..\LocusCommon\Windows\LocusWindow.cs">
+      <Link>Windows\LocusWindow.cs</Link>
+    </Compile>
     <Compile Include="..\locuscommon\windows\viewmodels\DelegateCommand.cs">
       <Link>Windows\ViewModels\DelegateCommand.cs</Link>
     </Compile>

@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="WindowsBase" />
@@ -79,6 +80,9 @@
     </Compile>
     <Compile Include="..\LocusCommon\Text\TextArranger.cs">
       <Link>Text\TextArranger.cs</Link>
+    </Compile>
+    <Compile Include="..\LocusCommon\Windows\LocusWindow.cs">
+      <Link>Windows\LocusWindow.cs</Link>
     </Compile>
     <Compile Include="..\locuscommon\windows\viewmodels\DelegateCommand.cs">
       <Link>Windows\ViewModels\DelegateCommand.cs</Link>

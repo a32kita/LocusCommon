@@ -53,6 +53,7 @@
     <Compile Include="Collection\Specialized\NotifyCollectionChangedEventHandler.cs" />
     <Compile Include="FrameworkExtension\ExtensionAttribute.cs" />
     <Compile Include="Magics\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Windows\LocusWindow.cs" />
     <Compile Include="Windows\ViewModels\DelegateCommandInitializeParameter.cs" />
     <None Include="Debug\ObjectExtensions.cs" />
     <Compile Include="Drawing\ImageExtensions.cs" />
