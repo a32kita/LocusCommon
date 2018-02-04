@@ -21,19 +21,34 @@ namespace LocusCommon.Windows
 
         // 依存関係プロパティ
         
-        public bool DoClose
+        public bool IsClosed
         {
-            get { return (bool)GetValue(DoCloseProperty); }
-            set { SetValue(DoCloseProperty, value); }
+            get { return (bool)GetValue(IsClosedProperty); }
+            set { SetValue(IsClosedProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for DoClose.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty DoCloseProperty =
-            DependencyProperty.Register("DoClose", typeof(bool), typeof(LocusWindow), new PropertyMetadata(false, (d, e) =>
+        // Using a DependencyProperty as the backing store for IsClosed.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsClosedProperty =
+            DependencyProperty.Register("IsClosed", typeof(bool), typeof(LocusWindow), new PropertyMetadata(false, (d, e) =>
             {
+                var instance = (LocusWindow)d;
+                if ((bool)e.NewValue)
+                {
+                    try
+                    {
+                        instance.Close();
+                    }
+                    catch { }
+                }
+                else
+                {
+                    throw new NotImplementedException();
+                }
             }));
 
-        
+
+
+
         // コンストラクタ
 
         /// <summary>
@@ -41,11 +56,22 @@ namespace LocusCommon.Windows
         /// </summary>
         public LocusWindow()
         {
-            
+            this.Loaded += LocusWindow_Loaded;
+            this.Closed += LocusWindow_Closed;
         }
 
 
         // 非公開メソッド
+
+        private void LocusWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.IsClosed = false;
+        }
+
+        private void LocusWindow_Closed(object sender, EventArgs e)
+        {
+            this.IsClosed = true;
+        }
     }
 }
 

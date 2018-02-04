@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serializat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusCommon.Serialization", "LocusCommon.Serialization\LocusCommon.Serialization.csproj", "{3D38076C-7B5B-47E3-B408-2F4637410E09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocusWindowTest", "LocusWindowTest\LocusWindowTest.csproj", "{F022322B-3D5E-4C01-8A95-293E64371B10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{3D38076C-7B5B-47E3-B408-2F4637410E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D38076C-7B5B-47E3-B408-2F4637410E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D38076C-7B5B-47E3-B408-2F4637410E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F022322B-3D5E-4C01-8A95-293E64371B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F022322B-3D5E-4C01-8A95-293E64371B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F022322B-3D5E-4C01-8A95-293E64371B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F022322B-3D5E-4C01-8A95-293E64371B10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +125,7 @@ Global
 		{B0E474B5-F9D2-49A1-A8BB-A5B859198D71} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 		{9183E39C-07D0-470E-8AB9-CD1B4A7114FF} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 		{3D38076C-7B5B-47E3-B408-2F4637410E09} = {0C0F384D-914F-4DDD-8076-A45C8940E682}
+		{F022322B-3D5E-4C01-8A95-293E64371B10} = {7F621611-3727-453B-AD0A-86ACC6D0EE20}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1ACE4463-AE92-486C-92E2-B0272E70B1B3}
